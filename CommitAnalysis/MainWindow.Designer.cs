@@ -659,7 +659,7 @@
             btnRefresh.TabIndex = 3;
             ttMainWindow.SetToolTip(btnRefresh, "Refresh the repository");
             btnRefresh.UseVisualStyleBackColor = true;
-            btnRefresh.Click += btnRepositoryPath_Click;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnOpenFilesFilter
             // 

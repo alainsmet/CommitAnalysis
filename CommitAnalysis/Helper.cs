@@ -1,11 +1,13 @@
 ﻿using LibGit2Sharp;
 using System.Data;
 using System.Diagnostics;
+using System.Net.NetworkInformation;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
 namespace CommitAnalysis
 {
-    internal class Helper
+    public static class Helper
     {
         public static Font hashFont = new Font("Consolas", (float)9.75);
 
@@ -363,7 +365,28 @@ namespace CommitAnalysis
 
         public static void ExecuteUrl(string url)
         {
-            Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+            try
+            {
+                Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+            } catch 
+            { 
+            
+            } 
+        }
+
+        public static void ChangeValue(this ComboBox targetComboBox, string selectedValue, bool triggerEvent = true)
+        {
+            if (!targetComboBox.Items.Contains(selectedValue)) { return; }
+            
+            targetComboBox.SelectedItem = selectedValue;
+
+            if (!triggerEvent) { return; }
+
+            var method = typeof(ComboBox).GetMethod("OnSelectionChangeCommitted", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+
+            if (method == null) { return; }
+
+            method.Invoke(targetComboBox, new object[] { EventArgs.Empty });
         }
     }
 }

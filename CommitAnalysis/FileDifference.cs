@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommitAnalysis
 {
-    internal class FileDifference
+    public class FileDifference
     {
         private List<string> _ReferenceFileLines;
         private List<string> _ComparedFileLines;

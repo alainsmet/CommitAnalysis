@@ -995,11 +995,7 @@ namespace CommitAnalysis
             if (dgvFileCommitHistory[e.ColumnIndex, e.RowIndex] is not DataGridViewLinkCell linkCell) { return; }
 
             string url = linkCell.ToolTipText.ToString();
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
-            {
-                FileName = url,
-                UseShellExecute = true
-            });
+            Helper.ExecuteUrl(url);
         }
 
         private void getUniqueListOfTicketsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1297,6 +1293,41 @@ namespace CommitAnalysis
         {
             AboutForm aboutForm = new AboutForm();
             aboutForm.ShowDialog();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            string refBranchOld = cbBranchRef.Text;
+            string refTagOld = cbTagsRef.Text;
+            string refHashOld = cbHashesRef.Text;
+            string targetBranchOld = cbBranchTarget.Text;
+            string targetTagOld = cbTagsTarget.Text;
+            string targetHashOld = cbHashesTarget.Text;
+
+            UpdateInformation();
+
+            cbBranchRef.ChangeValue(refBranchOld);
+            cbBranchTarget.ChangeValue(targetBranchOld);
+
+            if(refTagOld == firstCbTagItemString || refTagOld == noTagItemString)
+            {
+                cbTagsRef.ChangeValue(refTagOld, false);
+                cbHashesRef.ChangeValue(refHashOld);
+            }
+            else
+            {
+                cbTagsRef.ChangeValue(refTagOld);
+            }
+
+            if (targetTagOld == firstCbTagItemString || targetTagOld == noTagItemString)
+            {
+                cbTagsTarget.ChangeValue(targetTagOld, false);
+                cbHashesTarget.ChangeValue(targetHashOld);
+            }
+            else
+            {
+                cbTagsTarget.ChangeValue(targetTagOld);
+            }
         }
     }
 }
