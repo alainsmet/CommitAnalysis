@@ -26,5 +26,11 @@
     <Setting Name="ShowBranchLines" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="ReportBugUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://github.com/alainsmet/CommitAnalysis/issues</Value>
+    </Setting>
+    <Setting Name="RepoUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://github.com/alainsmet/CommitAnalysis</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

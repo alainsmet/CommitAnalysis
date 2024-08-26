@@ -45,6 +45,9 @@
             getUniqueListOfTicketsToolStripMenuItem = new ToolStripMenuItem();
             showBranchHistoryToolStripMenuItem = new ToolStripMenuItem();
             seeGitSubrepositoriesToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            reportAnIssueToolStripMenuItem = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
             tbRepositoryPath = new TextBox();
             btnRepositoryPath = new Button();
             label1 = new Label();
@@ -84,10 +87,10 @@
             btnRefresh = new Button();
             ttMainWindow = new ToolTip(components);
             btnOpenFilesFilter = new Button();
+            btnReloadFilter = new Button();
             cbApplyFilter = new CheckBox();
             tbFilesFilterPath = new TextBox();
             ofdFilesListFiler = new OpenFileDialog();
-            btnReloadFilter = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -110,10 +113,12 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, analysisToolStripMenuItem });
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, analysisToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(888, 24);
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new Size(1015, 30);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -121,32 +126,32 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { refreshRepositorygitPullToolStripMenuItem, settingsToolStripMenuItem, toolStripSeparator1, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(37, 20);
+            fileToolStripMenuItem.Size = new Size(46, 24);
             fileToolStripMenuItem.Text = "&File";
             // 
             // refreshRepositorygitPullToolStripMenuItem
             // 
             refreshRepositorygitPullToolStripMenuItem.Name = "refreshRepositorygitPullToolStripMenuItem";
-            refreshRepositorygitPullToolStripMenuItem.Size = new Size(229, 22);
+            refreshRepositorygitPullToolStripMenuItem.Size = new Size(286, 26);
             refreshRepositorygitPullToolStripMenuItem.Text = "Refresh repository (git pull) ...";
             // 
             // settingsToolStripMenuItem
             // 
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.Size = new Size(229, 22);
+            settingsToolStripMenuItem.Size = new Size(286, 26);
             settingsToolStripMenuItem.Text = "Settings ...";
             settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(226, 6);
+            toolStripSeparator1.Size = new Size(283, 6);
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.F4;
-            exitToolStripMenuItem.Size = new Size(229, 22);
+            exitToolStripMenuItem.Size = new Size(286, 26);
             exitToolStripMenuItem.Text = "E&xit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -154,44 +159,67 @@
             // 
             analysisToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { getUniqueListOfTicketsToolStripMenuItem, showBranchHistoryToolStripMenuItem, seeGitSubrepositoriesToolStripMenuItem });
             analysisToolStripMenuItem.Name = "analysisToolStripMenuItem";
-            analysisToolStripMenuItem.Size = new Size(62, 20);
+            analysisToolStripMenuItem.Size = new Size(76, 24);
             analysisToolStripMenuItem.Text = "&Analysis";
             // 
             // getUniqueListOfTicketsToolStripMenuItem
             // 
             getUniqueListOfTicketsToolStripMenuItem.Name = "getUniqueListOfTicketsToolStripMenuItem";
-            getUniqueListOfTicketsToolStripMenuItem.Size = new Size(205, 22);
+            getUniqueListOfTicketsToolStripMenuItem.Size = new Size(257, 26);
             getUniqueListOfTicketsToolStripMenuItem.Text = "Perform full comparison";
             getUniqueListOfTicketsToolStripMenuItem.Click += getUniqueListOfTicketsToolStripMenuItem_Click;
             // 
             // showBranchHistoryToolStripMenuItem
             // 
             showBranchHistoryToolStripMenuItem.Name = "showBranchHistoryToolStripMenuItem";
-            showBranchHistoryToolStripMenuItem.Size = new Size(205, 22);
+            showBranchHistoryToolStripMenuItem.Size = new Size(257, 26);
             showBranchHistoryToolStripMenuItem.Text = "Branch explorer ...";
             showBranchHistoryToolStripMenuItem.Click += showBranchHistoryToolStripMenuItem_Click;
             // 
             // seeGitSubrepositoriesToolStripMenuItem
             // 
             seeGitSubrepositoriesToolStripMenuItem.Name = "seeGitSubrepositoriesToolStripMenuItem";
-            seeGitSubrepositoriesToolStripMenuItem.Size = new Size(205, 22);
+            seeGitSubrepositoriesToolStripMenuItem.Size = new Size(257, 26);
             seeGitSubrepositoriesToolStripMenuItem.Text = "See Git subrepositories ...";
+            // 
+            // helpToolStripMenuItem
+            // 
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { reportAnIssueToolStripMenuItem, aboutToolStripMenuItem });
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(55, 24);
+            helpToolStripMenuItem.Text = "Help";
+            // 
+            // reportAnIssueToolStripMenuItem
+            // 
+            reportAnIssueToolStripMenuItem.Name = "reportAnIssueToolStripMenuItem";
+            reportAnIssueToolStripMenuItem.Size = new Size(224, 26);
+            reportAnIssueToolStripMenuItem.Text = "Report an issue";
+            reportAnIssueToolStripMenuItem.Click += reportAnIssueToolStripMenuItem_Click;
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(224, 26);
+            aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // tbRepositoryPath
             // 
             tbRepositoryPath.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            tbRepositoryPath.Location = new Point(123, 38);
+            tbRepositoryPath.Location = new Point(141, 51);
+            tbRepositoryPath.Margin = new Padding(3, 4, 3, 4);
             tbRepositoryPath.Name = "tbRepositoryPath";
             tbRepositoryPath.ReadOnly = true;
-            tbRepositoryPath.Size = new Size(672, 23);
+            tbRepositoryPath.Size = new Size(767, 27);
             tbRepositoryPath.TabIndex = 2;
             // 
             // btnRepositoryPath
             // 
             btnRepositoryPath.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnRepositoryPath.Location = new Point(799, 36);
+            btnRepositoryPath.Location = new Point(913, 48);
+            btnRepositoryPath.Margin = new Padding(3, 4, 3, 4);
             btnRepositoryPath.Name = "btnRepositoryPath";
-            btnRepositoryPath.Size = new Size(35, 26);
+            btnRepositoryPath.Size = new Size(40, 35);
             btnRepositoryPath.TabIndex = 3;
             btnRepositoryPath.Text = "...";
             ttMainWindow.SetToolTip(btnRepositoryPath, "Open a repository");
@@ -201,9 +229,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 41);
+            label1.Location = new Point(14, 55);
             label1.Name = "label1";
-            label1.Size = new Size(96, 15);
+            label1.Size = new Size(121, 20);
             label1.TabIndex = 4;
             label1.Text = "Repository path :";
             // 
@@ -212,9 +240,10 @@
             cbBranchRef.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             cbBranchRef.DropDownStyle = ComboBoxStyle.DropDownList;
             cbBranchRef.FormattingEnabled = true;
-            cbBranchRef.Location = new Point(56, 22);
+            cbBranchRef.Location = new Point(64, 29);
+            cbBranchRef.Margin = new Padding(3, 4, 3, 4);
             cbBranchRef.Name = "cbBranchRef";
-            cbBranchRef.Size = new Size(366, 23);
+            cbBranchRef.Size = new Size(417, 28);
             cbBranchRef.TabIndex = 5;
             cbBranchRef.SelectionChangeCommitted += cbBranchRef_SelectionChangeCommitted;
             // 
@@ -223,16 +252,18 @@
             cbBranchTarget.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             cbBranchTarget.DropDownStyle = ComboBoxStyle.DropDownList;
             cbBranchTarget.FormattingEnabled = true;
-            cbBranchTarget.Location = new Point(56, 22);
+            cbBranchTarget.Location = new Point(64, 29);
+            cbBranchTarget.Margin = new Padding(3, 4, 3, 4);
             cbBranchTarget.Name = "cbBranchTarget";
-            cbBranchTarget.Size = new Size(370, 23);
+            cbBranchTarget.Size = new Size(422, 28);
             cbBranchTarget.TabIndex = 6;
             cbBranchTarget.SelectionChangeCommitted += cbBranchTarget_SelectionChangeCommitted;
             // 
             // splitContainer1
             // 
             splitContainer1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            splitContainer1.Location = new Point(12, 239);
+            splitContainer1.Location = new Point(14, 319);
+            splitContainer1.Margin = new Padding(3, 4, 3, 4);
             splitContainer1.Name = "splitContainer1";
             splitContainer1.Orientation = Orientation.Horizontal;
             // 
@@ -243,8 +274,9 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(tcFileInfo);
-            splitContainer1.Size = new Size(864, 375);
-            splitContainer1.SplitterDistance = 204;
+            splitContainer1.Size = new Size(987, 500);
+            splitContainer1.SplitterDistance = 272;
+            splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 11;
             // 
             // dgvFilesDifference
@@ -258,13 +290,15 @@
             dgvFilesDifference.FilterAndSortEnabled = true;
             dgvFilesDifference.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
             dgvFilesDifference.Location = new Point(0, 0);
+            dgvFilesDifference.Margin = new Padding(3, 4, 3, 4);
             dgvFilesDifference.MaxFilterButtonImageHeight = 23;
             dgvFilesDifference.Name = "dgvFilesDifference";
             dgvFilesDifference.ReadOnly = true;
             dgvFilesDifference.RightToLeft = RightToLeft.No;
             dgvFilesDifference.RowHeadersVisible = false;
+            dgvFilesDifference.RowHeadersWidth = 51;
             dgvFilesDifference.RowTemplate.Height = 25;
-            dgvFilesDifference.Size = new Size(864, 204);
+            dgvFilesDifference.Size = new Size(987, 272);
             dgvFilesDifference.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             dgvFilesDifference.TabIndex = 10;
             dgvFilesDifference.RowPrePaint += dgvFilesDifference_RowPrePaint;
@@ -276,18 +310,20 @@
             tcFileInfo.Controls.Add(tabPage2);
             tcFileInfo.Dock = DockStyle.Fill;
             tcFileInfo.Location = new Point(0, 0);
+            tcFileInfo.Margin = new Padding(3, 4, 3, 4);
             tcFileInfo.Name = "tcFileInfo";
             tcFileInfo.SelectedIndex = 0;
-            tcFileInfo.Size = new Size(864, 167);
+            tcFileInfo.Size = new Size(987, 223);
             tcFileInfo.TabIndex = 1;
             // 
             // tpFileCommitHistory
             // 
             tpFileCommitHistory.Controls.Add(dgvFileCommitHistory);
-            tpFileCommitHistory.Location = new Point(4, 24);
+            tpFileCommitHistory.Location = new Point(4, 29);
+            tpFileCommitHistory.Margin = new Padding(3, 4, 3, 4);
             tpFileCommitHistory.Name = "tpFileCommitHistory";
-            tpFileCommitHistory.Padding = new Padding(3);
-            tpFileCommitHistory.Size = new Size(856, 139);
+            tpFileCommitHistory.Padding = new Padding(3, 4, 3, 4);
+            tpFileCommitHistory.Size = new Size(979, 190);
             tpFileCommitHistory.TabIndex = 0;
             tpFileCommitHistory.Text = "File commit history";
             tpFileCommitHistory.UseVisualStyleBackColor = true;
@@ -309,12 +345,14 @@
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
             dgvFileCommitHistory.DefaultCellStyle = dataGridViewCellStyle5;
             dgvFileCommitHistory.Dock = DockStyle.Fill;
-            dgvFileCommitHistory.Location = new Point(3, 3);
+            dgvFileCommitHistory.Location = new Point(3, 4);
+            dgvFileCommitHistory.Margin = new Padding(3, 4, 3, 4);
             dgvFileCommitHistory.Name = "dgvFileCommitHistory";
             dgvFileCommitHistory.ReadOnly = true;
             dgvFileCommitHistory.RowHeadersVisible = false;
+            dgvFileCommitHistory.RowHeadersWidth = 51;
             dgvFileCommitHistory.RowTemplate.Height = 25;
-            dgvFileCommitHistory.Size = new Size(850, 133);
+            dgvFileCommitHistory.Size = new Size(973, 182);
             dgvFileCommitHistory.TabIndex = 0;
             dgvFileCommitHistory.CellContentClick += dgvFileCommitHistory_CellContentClick;
             // 
@@ -323,6 +361,7 @@
             dataGridViewCellStyle1.Font = new Font("Consolas", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             FileHistoryHashRef.DefaultCellStyle = dataGridViewCellStyle1;
             FileHistoryHashRef.HeaderText = "File hashes for reference branch";
+            FileHistoryHashRef.MinimumWidth = 6;
             FileHistoryHashRef.Name = "FileHistoryHashRef";
             FileHistoryHashRef.ReadOnly = true;
             FileHistoryHashRef.Width = 300;
@@ -330,22 +369,27 @@
             // CommitDateRef
             // 
             CommitDateRef.HeaderText = "Commit date";
+            CommitDateRef.MinimumWidth = 6;
             CommitDateRef.Name = "CommitDateRef";
             CommitDateRef.ReadOnly = true;
+            CommitDateRef.Width = 125;
             // 
             // RefCommitName
             // 
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             RefCommitName.DefaultCellStyle = dataGridViewCellStyle2;
             RefCommitName.HeaderText = "Commit name for reference branch";
+            RefCommitName.MinimumWidth = 6;
             RefCommitName.Name = "RefCommitName";
             RefCommitName.ReadOnly = true;
+            RefCommitName.Width = 125;
             // 
             // FileHistoryHashTarget
             // 
             dataGridViewCellStyle3.Font = new Font("Consolas", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             FileHistoryHashTarget.DefaultCellStyle = dataGridViewCellStyle3;
             FileHistoryHashTarget.HeaderText = "File hashes for target branch";
+            FileHistoryHashTarget.MinimumWidth = 6;
             FileHistoryHashTarget.Name = "FileHistoryHashTarget";
             FileHistoryHashTarget.ReadOnly = true;
             FileHistoryHashTarget.Width = 300;
@@ -353,24 +397,29 @@
             // CommitDateTarget
             // 
             CommitDateTarget.HeaderText = "Commit date";
+            CommitDateTarget.MinimumWidth = 6;
             CommitDateTarget.Name = "CommitDateTarget";
             CommitDateTarget.ReadOnly = true;
+            CommitDateTarget.Width = 125;
             // 
             // TargetCommitName
             // 
             dataGridViewCellStyle4.SelectionForeColor = Color.White;
             TargetCommitName.DefaultCellStyle = dataGridViewCellStyle4;
             TargetCommitName.HeaderText = "Commit name for target branch";
+            TargetCommitName.MinimumWidth = 6;
             TargetCommitName.Name = "TargetCommitName";
             TargetCommitName.ReadOnly = true;
+            TargetCommitName.Width = 125;
             // 
             // tabPage2
             // 
             tabPage2.Controls.Add(wvFileDifferences);
-            tabPage2.Location = new Point(4, 24);
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(856, 139);
+            tabPage2.Padding = new Padding(3, 4, 3, 4);
+            tabPage2.Size = new Size(979, 190);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Differences";
             tabPage2.UseVisualStyleBackColor = true;
@@ -381,26 +430,29 @@
             wvFileDifferences.CreationProperties = null;
             wvFileDifferences.DefaultBackgroundColor = Color.White;
             wvFileDifferences.Dock = DockStyle.Fill;
-            wvFileDifferences.Location = new Point(3, 3);
+            wvFileDifferences.Location = new Point(3, 4);
+            wvFileDifferences.Margin = new Padding(3, 4, 3, 4);
             wvFileDifferences.Name = "wvFileDifferences";
-            wvFileDifferences.Size = new Size(850, 133);
+            wvFileDifferences.Size = new Size(973, 182);
             wvFileDifferences.TabIndex = 1;
             wvFileDifferences.ZoomFactor = 1D;
             wvFileDifferences.CoreWebView2InitializationCompleted += wvFileDifferences_CoreWebView2InitializationCompleted;
             // 
             // statusStrip1
             // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { lbStatusMessage });
-            statusStrip1.Location = new Point(0, 626);
+            statusStrip1.Location = new Point(0, 838);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(888, 22);
+            statusStrip1.Padding = new Padding(1, 0, 16, 0);
+            statusStrip1.Size = new Size(1015, 26);
             statusStrip1.TabIndex = 12;
             statusStrip1.Text = "statusStrip1";
             // 
             // lbStatusMessage
             // 
             lbStatusMessage.Name = "lbStatusMessage";
-            lbStatusMessage.Size = new Size(118, 17);
+            lbStatusMessage.Size = new Size(151, 20);
             lbStatusMessage.Text = "toolStripStatusLabel1";
             // 
             // cbTagsRef
@@ -408,9 +460,10 @@
             cbTagsRef.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             cbTagsRef.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTagsRef.FormattingEnabled = true;
-            cbTagsRef.Location = new Point(56, 51);
+            cbTagsRef.Location = new Point(64, 68);
+            cbTagsRef.Margin = new Padding(3, 4, 3, 4);
             cbTagsRef.Name = "cbTagsRef";
-            cbTagsRef.Size = new Size(366, 23);
+            cbTagsRef.Size = new Size(417, 28);
             cbTagsRef.TabIndex = 13;
             cbTagsRef.SelectionChangeCommitted += cbTagsRef_SelectionChangeCommitted;
             // 
@@ -419,9 +472,10 @@
             cbTagsTarget.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             cbTagsTarget.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTagsTarget.FormattingEnabled = true;
-            cbTagsTarget.Location = new Point(56, 51);
+            cbTagsTarget.Location = new Point(64, 68);
+            cbTagsTarget.Margin = new Padding(3, 4, 3, 4);
             cbTagsTarget.Name = "cbTagsTarget";
-            cbTagsTarget.Size = new Size(370, 23);
+            cbTagsTarget.Size = new Size(422, 28);
             cbTagsTarget.TabIndex = 13;
             cbTagsTarget.SelectionChangeCommitted += cbTagsTarget_SelectionChangeCommitted;
             // 
@@ -436,8 +490,10 @@
             gbReference.Controls.Add(cbTagsRef);
             gbReference.Dock = DockStyle.Fill;
             gbReference.Location = new Point(0, 0);
+            gbReference.Margin = new Padding(3, 4, 3, 4);
             gbReference.Name = "gbReference";
-            gbReference.Size = new Size(428, 124);
+            gbReference.Padding = new Padding(3, 4, 3, 4);
+            gbReference.Size = new Size(488, 165);
             gbReference.TabIndex = 14;
             gbReference.TabStop = false;
             gbReference.Text = "Reference commit";
@@ -445,9 +501,10 @@
             // btnExploreRefBranch
             // 
             btnExploreRefBranch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnExploreRefBranch.Location = new Point(387, 80);
+            btnExploreRefBranch.Location = new Point(441, 107);
+            btnExploreRefBranch.Margin = new Padding(3, 4, 3, 4);
             btnExploreRefBranch.Name = "btnExploreRefBranch";
-            btnExploreRefBranch.Size = new Size(35, 26);
+            btnExploreRefBranch.Size = new Size(40, 35);
             btnExploreRefBranch.TabIndex = 16;
             btnExploreRefBranch.Text = "...";
             ttMainWindow.SetToolTip(btnExploreRefBranch, "Explore reference branch");
@@ -461,9 +518,10 @@
             cbHashesRef.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbHashesRef.Font = new Font("Consolas", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             cbHashesRef.FormattingEnabled = true;
-            cbHashesRef.Location = new Point(56, 82);
+            cbHashesRef.Location = new Point(64, 109);
+            cbHashesRef.Margin = new Padding(3, 4, 3, 4);
             cbHashesRef.Name = "cbHashesRef";
-            cbHashesRef.Size = new Size(325, 23);
+            cbHashesRef.Size = new Size(370, 27);
             cbHashesRef.TabIndex = 15;
             cbHashesRef.SelectedValueChanged += cbHashesRef_SelectedValueChanged;
             cbHashesRef.KeyDown += cbHashesRef_KeyDown;
@@ -472,27 +530,27 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(6, 85);
+            label4.Location = new Point(7, 113);
             label4.Name = "label4";
-            label4.Size = new Size(34, 15);
+            label4.Size = new Size(42, 20);
             label4.TabIndex = 14;
             label4.Text = "Hash";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 54);
+            label3.Location = new Point(7, 72);
             label3.Name = "label3";
-            label3.Size = new Size(25, 15);
+            label3.Size = new Size(32, 20);
             label3.TabIndex = 14;
             label3.Text = "Tag";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 26);
+            label2.Location = new Point(7, 35);
             label2.Name = "label2";
-            label2.Size = new Size(44, 15);
+            label2.Size = new Size(54, 20);
             label2.TabIndex = 14;
             label2.Text = "Branch";
             // 
@@ -507,8 +565,10 @@
             gbTarget.Controls.Add(label5);
             gbTarget.Dock = DockStyle.Fill;
             gbTarget.Location = new Point(0, 0);
+            gbTarget.Margin = new Padding(3, 4, 3, 4);
             gbTarget.Name = "gbTarget";
-            gbTarget.Size = new Size(432, 124);
+            gbTarget.Padding = new Padding(3, 4, 3, 4);
+            gbTarget.Size = new Size(494, 165);
             gbTarget.TabIndex = 15;
             gbTarget.TabStop = false;
             gbTarget.Text = "Target commit";
@@ -516,9 +576,10 @@
             // btnExploreTargetBranch
             // 
             btnExploreTargetBranch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnExploreTargetBranch.Location = new Point(391, 80);
+            btnExploreTargetBranch.Location = new Point(447, 107);
+            btnExploreTargetBranch.Margin = new Padding(3, 4, 3, 4);
             btnExploreTargetBranch.Name = "btnExploreTargetBranch";
-            btnExploreTargetBranch.Size = new Size(35, 26);
+            btnExploreTargetBranch.Size = new Size(40, 35);
             btnExploreTargetBranch.TabIndex = 16;
             btnExploreTargetBranch.Text = "...";
             ttMainWindow.SetToolTip(btnExploreTargetBranch, "Explore target branch");
@@ -532,9 +593,10 @@
             cbHashesTarget.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbHashesTarget.Font = new Font("Consolas", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             cbHashesTarget.FormattingEnabled = true;
-            cbHashesTarget.Location = new Point(56, 82);
+            cbHashesTarget.Location = new Point(64, 109);
+            cbHashesTarget.Margin = new Padding(3, 4, 3, 4);
             cbHashesTarget.Name = "cbHashesTarget";
-            cbHashesTarget.Size = new Size(329, 23);
+            cbHashesTarget.Size = new Size(375, 27);
             cbHashesTarget.TabIndex = 15;
             cbHashesTarget.SelectedValueChanged += cbHashesTarget_SelectedValueChanged;
             cbHashesTarget.KeyDown += cbHashesTarget_KeyDown;
@@ -543,34 +605,35 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(6, 85);
+            label7.Location = new Point(7, 113);
             label7.Name = "label7";
-            label7.Size = new Size(34, 15);
+            label7.Size = new Size(42, 20);
             label7.TabIndex = 14;
             label7.Text = "Hash";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(6, 54);
+            label6.Location = new Point(7, 72);
             label6.Name = "label6";
-            label6.Size = new Size(25, 15);
+            label6.Size = new Size(32, 20);
             label6.TabIndex = 14;
             label6.Text = "Tag";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(6, 26);
+            label5.Location = new Point(7, 35);
             label5.Name = "label5";
-            label5.Size = new Size(44, 15);
+            label5.Size = new Size(54, 20);
             label5.TabIndex = 14;
             label5.Text = "Branch";
             // 
             // splitContainer2
             // 
             splitContainer2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            splitContainer2.Location = new Point(12, 79);
+            splitContainer2.Location = new Point(14, 105);
+            splitContainer2.Margin = new Padding(3, 4, 3, 4);
             splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -580,17 +643,19 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(gbTarget);
-            splitContainer2.Size = new Size(864, 124);
-            splitContainer2.SplitterDistance = 428;
+            splitContainer2.Size = new Size(987, 165);
+            splitContainer2.SplitterDistance = 488;
+            splitContainer2.SplitterWidth = 5;
             splitContainer2.TabIndex = 16;
             // 
             // btnRefresh
             // 
             btnRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnRefresh.Image = Properties.Resources.icons8_synchroniser_25;
-            btnRefresh.Location = new Point(837, 36);
+            btnRefresh.Location = new Point(957, 48);
+            btnRefresh.Margin = new Padding(3, 4, 3, 4);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(39, 26);
+            btnRefresh.Size = new Size(45, 35);
             btnRefresh.TabIndex = 3;
             ttMainWindow.SetToolTip(btnRefresh, "Refresh the repository");
             btnRefresh.UseVisualStyleBackColor = true;
@@ -599,21 +664,36 @@
             // btnOpenFilesFilter
             // 
             btnOpenFilesFilter.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnOpenFilesFilter.Location = new Point(799, 207);
+            btnOpenFilesFilter.Location = new Point(913, 276);
+            btnOpenFilesFilter.Margin = new Padding(3, 4, 3, 4);
             btnOpenFilesFilter.Name = "btnOpenFilesFilter";
-            btnOpenFilesFilter.Size = new Size(35, 26);
+            btnOpenFilesFilter.Size = new Size(40, 35);
             btnOpenFilesFilter.TabIndex = 20;
             btnOpenFilesFilter.Text = "...";
             ttMainWindow.SetToolTip(btnOpenFilesFilter, "Open a repository");
             btnOpenFilesFilter.UseVisualStyleBackColor = true;
             btnOpenFilesFilter.Click += btnOpenFilesFilter_Click;
             // 
+            // btnReloadFilter
+            // 
+            btnReloadFilter.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnReloadFilter.Image = Properties.Resources.icons8_synchroniser_25;
+            btnReloadFilter.Location = new Point(958, 276);
+            btnReloadFilter.Margin = new Padding(3, 4, 3, 4);
+            btnReloadFilter.Name = "btnReloadFilter";
+            btnReloadFilter.Size = new Size(45, 35);
+            btnReloadFilter.TabIndex = 21;
+            ttMainWindow.SetToolTip(btnReloadFilter, "Reload filter file");
+            btnReloadFilter.UseVisualStyleBackColor = true;
+            btnReloadFilter.Click += btnReloadFilter_Click;
+            // 
             // cbApplyFilter
             // 
             cbApplyFilter.AutoSize = true;
-            cbApplyFilter.Location = new Point(12, 211);
+            cbApplyFilter.Location = new Point(14, 281);
+            cbApplyFilter.Margin = new Padding(3, 4, 3, 4);
             cbApplyFilter.Name = "cbApplyFilter";
-            cbApplyFilter.Size = new Size(99, 19);
+            cbApplyFilter.Size = new Size(124, 24);
             cbApplyFilter.TabIndex = 18;
             cbApplyFilter.Text = "Apply a filter :";
             cbApplyFilter.UseVisualStyleBackColor = true;
@@ -622,33 +702,22 @@
             // tbFilesFilterPath
             // 
             tbFilesFilterPath.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            tbFilesFilterPath.Location = new Point(114, 209);
+            tbFilesFilterPath.Location = new Point(130, 279);
+            tbFilesFilterPath.Margin = new Padding(3, 4, 3, 4);
             tbFilesFilterPath.Name = "tbFilesFilterPath";
             tbFilesFilterPath.ReadOnly = true;
-            tbFilesFilterPath.Size = new Size(681, 23);
+            tbFilesFilterPath.Size = new Size(778, 27);
             tbFilesFilterPath.TabIndex = 19;
             // 
             // ofdFilesListFiler
             // 
             ofdFilesListFiler.FileName = "openFileDialog1";
             // 
-            // btnReloadFilter
-            // 
-            btnReloadFilter.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnReloadFilter.Image = Properties.Resources.icons8_synchroniser_25;
-            btnReloadFilter.Location = new Point(838, 207);
-            btnReloadFilter.Name = "btnReloadFilter";
-            btnReloadFilter.Size = new Size(39, 26);
-            btnReloadFilter.TabIndex = 21;
-            ttMainWindow.SetToolTip(btnReloadFilter, "Reload filter file");
-            btnReloadFilter.UseVisualStyleBackColor = true;
-            btnReloadFilter.Click += btnReloadFilter_Click;
-            // 
             // MainWindow
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(888, 648);
+            ClientSize = new Size(1015, 864);
             Controls.Add(btnReloadFilter);
             Controls.Add(btnOpenFilesFilter);
             Controls.Add(tbFilesFilterPath);
@@ -663,6 +732,7 @@
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MainWindow";
             Text = "Commit Analysis";
             Load += MainWindow_Load;
@@ -747,5 +817,8 @@
         private ToolStripMenuItem seeGitSubrepositoriesToolStripMenuItem;
         private OpenFileDialog ofdFilesListFiler;
         private Button btnReloadFilter;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem reportAnIssueToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
     }
 }

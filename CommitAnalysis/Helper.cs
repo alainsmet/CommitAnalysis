@@ -1,5 +1,6 @@
 ﻿using LibGit2Sharp;
 using System.Data;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 namespace CommitAnalysis
@@ -358,6 +359,11 @@ namespace CommitAnalysis
             openFileDialog.Multiselect = false;
             openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             return openFileDialog.ShowDialog();
+        }
+
+        public static void ExecuteUrl(string url)
+        {
+            Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
         }
     }
 }

@@ -118,5 +118,29 @@ namespace CommitAnalysis.Properties {
                 this["ShowBranchLines"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/alainsmet/CommitAnalysis/issues")]
+        public string ReportBugUrl {
+            get {
+                return ((string)(this["ReportBugUrl"]));
+            }
+            set {
+                this["ReportBugUrl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/alainsmet/CommitAnalysis")]
+        public string RepoUrl {
+            get {
+                return ((string)(this["RepoUrl"]));
+            }
+            set {
+                this["RepoUrl"] = value;
+            }
+        }
     }
 }

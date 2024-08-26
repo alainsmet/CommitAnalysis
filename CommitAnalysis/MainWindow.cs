@@ -1287,5 +1287,16 @@ namespace CommitAnalysis
             PopulateFilesListFilter();
             GetFilesDifference();
         }
+
+        private void reportAnIssueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Helper.ExecuteUrl(Properties.Settings.Default.ReportBugUrl);
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.ShowDialog();
+        }
     }
 }
