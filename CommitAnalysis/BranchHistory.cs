@@ -426,11 +426,7 @@ namespace CommitAnalysis
             string url = dgvBranchHistory.Rows[e.RowIndex].Cells[urlColumnName].Value.ToString();
             if (url == null) { return; }
 
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
-            {
-                FileName = url,
-                UseShellExecute = true
-            });
+            Helper.ExecuteUrl(url);
         }
 
         private void BranchHistory_Load(object sender, EventArgs e)
